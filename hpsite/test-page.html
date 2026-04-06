@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Harry Potter - DS</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to bottom, #0b0b0b, #1a1a1a);
+      color: #f5deb3;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      font-size: 28px;
+      background: #111;
+      color: gold;
+      letter-spacing: 2px;
+      animation: fadeIn 1.5s;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      background: #222;
+      width: 250px;
+      border: 1px solid gold;
+      border-radius: 0 0 10px 10px;
+      padding: 5px 0;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: gold;
+      padding: 12px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      text-align: left;
+      transition: 0.3s;
+      border-bottom: 1px solid #333;
+    }
+
+    nav button:last-child {
+      border-bottom: none;
+    }
+
+    nav button:hover {
+      background: gold;
+      color: black;
+      padding-left: 30px;
+    }
+
+    .conteudo {
+      display: none;
+      padding: 30px;
+      animation: fadeIn 0.8s;
+    }
+
+    .ativo {
+      display: block;
+    }
+
+    img {
+      max-width: 300px;
+      border-radius: 10px;
+      margin-top: 15px;
+      box-shadow: 0 0 15px gold;
+    }
+
+    h2 {
+      color: gold;
+    }
+
+    ul li {
+      margin: 10px 0;
+      transition: 0.3s;
+    }
+
+    ul li:hover {
+      transform: translateX(10px);
+      color: #fff;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    .card {
+      background: rgba(255, 215, 0, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px gold;
+    }
+
+    .card2 {
+      background: rgba(159, 0, 0, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px red;
+    }
+
+    .card3 {
+      background: rgba(0, 159, 0, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px lime;
+    }
+
+    .card4 {
+      background: rgba(255, 215, 0, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px yellow;
+    }
+
+    .card5 {
+      background: rgba(0, 0, 159, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px blue;
+    }
+
+    .card6 {
+      background: rgba(39, 39, 39, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgb(102, 102, 102);
+    }
+
+    .textg {
+      color: red;
+    }
+
+    .texts {
+      color: limegreen;
+    }
+
+    .textc {
+      color: blue;
+    }
+
+    .textgold {
+      color: gold;
+    }
+
+    .textsilver {
+      color: silver;
+    }
+
+    .textemerald {
+      color: rgb(80, 200, 120);
+    }
+
+    .textbrown{
+      color: brown;
+    }
+
+    .textdarkgold {
+      color: darkgoldenrod;
+    }
+
+    .textwhite {
+      color: rgb(255, 255, 255);
+    }
+
+    summary {
+      background: #222;
+      padding: 10px 20px;
+      width: 210px;
+      border: 1px solid gold;
+      border-radius: 5px;
+      margin-bottom: 2px;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    
+
+    .imgg {
+      max-width: 300px;
+      border-radius: 10px;
+      margin-top: 15px;
+      box-shadow: 0 0 15px red;
+    }
+
+    .imgs {
+      max-width: 300px;
+      border-radius: 10px;
+      margin-top: 15px;
+      box-shadow: 0 0 15px limegreen;
+    }
+
+    .imgc {
+      max-width: 300px;
+      border-radius: 10px;
+      margin-top: 15px;
+      box-shadow: 0 0 15px blue;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  🧙‍♂️ Curso DS - Mundo de Harry Potter
+</header>
+
+<details>
+    <summary style="font-size: 17px;">Menu</summary>
+        <nav>
+        <button onclick="mostrarAba('inicio')">Início</button>
+        <button onclick="mostrarAba('historia')">História</button>
+        <button onclick="mostrarAba('professores')">Professores</button>
+        <button onclick="mostrarAba('varinhas')">Varinhas</button>
+        <button onclick="mostrarAba('magias')">Magias</button>
+        <button onclick="mostrarAba('patrono')">Patrono</button>
+        <button onclick="mostrarAba('quiz')">Quiz</button>
+        <button onclick="mostrarAba('sobre')">Sobre Nós</button>
+        <button onclick="mostrarAba('meme')">ㅤ</button>
+        <button onclick="mostrarAba('test-page')">Test-Page</button>
+        </nav>
+</details>
+
+<div id="inicio" class="conteudo ativo">
+  <div class="card">
+    <h2>Bem-vindo a Hogwarts</h2>
+    <p>Olá bruxos e bruxas, sejam bem-vindos a escola de magias e bruxarias de Hogwarts, onde será ensinado sobre magias basicas, criação de poções, jogos de bruxos, Herbologia, domação de animais e defesa contra magias negras</p>
+    <img src="https://guiadoestudante.abril.com.br/wp-content/uploads/sites/4/2010/11/Hogwarts.jpeg?crop=1&resize=1212,909">
+  </div>
+  <p>ㅤ</p>
+  <p>ㅤ</p>
+  <div class="card2">
+    <details>
+      <summary class="textg">Gryffindor - (Grifinória)</summary>
+      <h3 class="textbrown">Representativo:</h3>
+      <p>Coragem, Ousadia, Bravura e Cavalheirismo.</p>
+      <h3 class="textbrown">Chefe de casa:</h3>
+      <p>Profª Minerva McGonagall.</p>
+      <h3 class="textbrown">Fundador:</h3>
+      <p>Godric Gryffindor.</p>
+      <img src="casas_g.png" class="imgg">
+      <h3 class="textbrown">História da casa:</h3>
+      <p>Seu criador Godric Gryffindor, acreditava que essas qualidades eram essenciais para enfrentar o perigo, defender oque é certo e proteger os outros. Por isso, ele queria que sua casa fosse um lugar onde alunos ousados e determinados pudessem se desenvolver.</p>
+      <p>Além disso dentro de Hogwarts cada fundador criou sua casa com propóstio diferente. No caso de Grifinória, o objetivo era:</p>
+      <li>Valorizar atos de coragem acima de tudo;</li>
+      <li>Formar bruxos dispostos a enfrentar desafios e riscos;</li>
+      <li>Incentivar a liderança e o heroísmo.</li>
+    </details>
+  </div>
+  <p>ㅤ</p>
+  <div class="card3">
+    <details>
+      <summary class="texts">Slytherin - (Sonserina)</summary>
+      <h3 class="textemerald">Representativo:</h3>
+      <p>Ambição, Astúcia, Liderança e Determinação.</p>
+      <h3 class="textemerald">Chefe de casa:</h3>
+      <p>Profº Severo Snape.</p>
+      <h3 class="textemerald">Fundador:</h3>
+      <p>Salazar Slytherin.</p>
+      <img src="casas_s.png" class="imgs">
+      <h3 class="textemerald">História da casa:</h3>
+      <p>Seu fundador Salazar Slytherin, acreditava que essas qualidades eram essenciais para alcnçar grandeza. Porém, ele também defendia que a escola Hogwarts deveria aceitar apenas bruxos de sangue puro, oque causou conflito com outros fundadores.</p>
+      <p>Os principais objetivos da Sonserina são:</p>
+      <li>Valorizar ambição e liderança;</li>
+      <li>Incentivar estratégia e inteligência prática;</li>
+      <li>Formar alunos focados em alcançar seus objetivos;</li>
+      <li>Priorizar a linhagem mágica.</li>
+    </details>
+  </div>
+  <p>ㅤ</p>
+  <div class="card4">
+    <details>
+      <summary class="textgold">Hufflepuff - (Lufa-Lufa)</summary>
+      <h3 class="textdarkgold">Representativo:</h3>
+      <p>Lealdade, Paciência, Justiça e Trabalho árduo.</p>
+      <h3 class="textdarkgold">Chefe de casa:</h3>
+      <p>Profª Pomona Sprout.</p>
+      <h3 class="textdarkgold">Fundador:</h3>
+      <p>Helga Hufflepuff.</p>
+      <img src="casas_l.png">
+      <h3 class="textdarkgold">História da casa:</h3>
+      <p>Enquanto alguns fundadores eram mais seletivos, Helga Hufflepuff acreditava que todos os alunos mereciam uma chance, independentemente de talento natural ou origem. Por isso, ela criou a Lufa-Lufa como uma casa acolhedora, que aceita estudantes diversos.</p>
+      <p>Os principais objetivos da Lufa-Lufa são:</p>
+      <li>Valorizar lealdade, paciência e dedicação;</li>
+      <li>Recompensar o trabalho duro, não só o talento;</li>
+      <li>Promover justiça e inclusão;</li>
+      <li>Criar um ambiente de cooperação e amizade.</li>
+    </details>
+  </div>
+  <p>ㅤ</p>
+  <div class="card5">
+    <details>
+      <summary class="textc">Ravenclaw - (Corvinal)</summary>
+      <h3 class="textsilver">Representativo:</h3>
+      <p>Inteligência, Sabedoria, Curiosidade, Sagacidade e Criatividade.</p>
+      <h3 class="textsilver">Chefe de casa:</h3>
+      <p>Filius Flitwick.</p>
+      <h3 class="textsilver">Fundador:</h3>
+      <p>Rowena Ravenclaw.</p>
+      <img src="casas_c.png" class="imgc">
+      <h3 class="textsilver">História da casa:</h3>
+      <p>Rowena Ravenclaw acreditava que o mais importante em um bruxo era a mente: criatividade, lógica e curiosidade. Por isso, ela criou sua casa para reunir os alunos que gostassem de aprender, pensar e explorar novas ideias.</p>
+      <p>Os principais objetivos da Corvinal são:</p>
+      <li>Valorizar inteligência e sabedoria;</li>
+      <li>Incentivar a criatividade e originalidade;</li>
+      <li>Estimular o aprendizado constante;</li>
+      <li>Reunir alunos com curiosidade intelectual.</li>
+    </details>
+  </div>
+</div>
+
+<div id="historia" class="conteudo">
+  <div class="card">
+    <h2>História</h2>
+    <p>Harry Potter é um garoto que vive com seus tios e acredita ser uma pessoa comum, até descobrir, aos 11 anos, que é um bruxo. Ele recebe uma carta convidando-o para estudar na Escola de Magia e Bruxaria de Hogwarts, um lugar onde jovens aprendem feitiços, poções e tudo sobre o mundo mágico.</p>
+    <p>Ao chegar em Hogwarts, Harry faz grandes amigos, como Ron Weasley e Hermione Granger, e passa a viver diversas aventuras. Ele também descobre que é famoso no mundo dos bruxos por ter sobrevivido, quando ainda era bebê, a um ataque do poderoso bruxo das trevas Lord Voldemort.</p>
+    <p>Durante seus anos na escola, Harry enfrenta muitos desafios, mistérios e perigos. Aos poucos, ele descobre mais sobre seu passado, sobre seus pais e sobre a ligação que tem com Voldemort.</p>
+    <p>Com coragem, amizade e determinação, Harry e seus amigos lutam contra as forças do mal, protegendo o mundo mágico. No confronto final, Harry enfrenta Voldemort em uma batalha decisiva, mostrando que o amor e a amizade são mais fortes do que o ódio.</p>
+    <img src="https://images.unsplash.com/photo-1611419010196-a360856fc42f">
+  </div>
+</div>
+
+<div id="professores" class="conteudo">
+  <div class="card">
+    <h2>Professores</h2>
+    <li>Alvo Dumbledore - Diretor;</li>
+    <li>Minerva McGonagall - Vice-Diretora;</li>
+    <li>Severo Snape - Poções e Defesa Contra as Artes das Trevas;</li>
+    <li>Fílio Flitwick - Feitiços e Maestro do Coro;</li>
+    <li>Pomona Sprout - Herbologia;</li>
+    <li>Remo Lupin - Defesa Contra as Artes das Trevas;</li>
+    <li>Rúbeo Hagrid - Trato das Criaturas Mágicas;</li>
+    <li>Horácio Slughorn - Poções;</li>
+    <li>Sibila Trelawney - Adivinhações;</li>
+    <li>Rolanda Hooch - Instrutora de Voo;</li>
+    <li>Quirino Quirrell - Defesa Contra as Artes das Trevas;</li>
+    <li>Alastor Moody - Defesa Contra as Artes das Trevas;</li>
+    <li>Dolores Umbridge - Defesa Contra as Artes das Trevas;</li>
+    <li>Aurora Sinistra - Astronomia;</li>
+    <li>Cuthbert Binns - História da Magia;</li>
+    <li>Septima Vector - Aritmancia;</li>
+    <li>Charity Burbage - Estudo dos Trouxas;</li>
+    <li>Guilhermina Grubbly-Plank - Trato das Criaturas Mágicas.</li>
+    <img src="https://hogwartsmagiaebruxarialupin.weebly.com/uploads/1/0/8/4/10842616/889035189.jpg">
+  </div>
+</div>
+
+<div id="varinhas" class="conteudo">
+  <div class="card">
+    <h2>Varinhas</h2>
+    <h4 class="textdarkgold">Protagonistas:</h4>
+    <li>Harry Potter: Azevinho com pena de Fênix (Núcleo de Fawkes);</li>
+    <li>Hermione Granger: Videira com fibra de coração de dragão;</li>
+    <li>Rony Weasley: Salgueiro e freixo com pelo de unicórnio.</li>
+    <img src="https://tm.ibxk.com.br/2021/12/09/09093944816062.jpg">
+    <h4 class="textdarkgold">Professores protagonistas:</h4>
+    <li>Alvo Dumbledore: Sabugueiro (Varinha das Varinhas) com pelo de cauda de testrálio;</li>
+    <li>Minerva McGonagall: Madeira de abeto com fibra de coração de dragão.</li>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtallTPG03baqmVUovCZk9zYypzzD-Fays_g&s">
+    <h4 class="textdarkgold">Protagonistas forças das trevas:</h4>
+    <li>Lord Voldemort: Teixo com pena de Fênix (Núcleo de Fawkes);</li>
+    <li>Draco Malfoy: Espinheiro com pelo de unicórnio;</li>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRZkKBVDLAtGjKKwxYzJ4sYPgaxwVOJhiohQ&s">
+  </div>
+</div>
+
+<div id="magias" class="conteudo">
+  <div class="card">
+    <h2>Magias</h2>
+    <ul>
+      <h3>⚔️ Combate e Defesa:</h3>
+      <li>✨ Expelliarmus - Desarma o oponente</li>
+      <li>🛡️ Protego – Escudo de proteção</li>
+      <li>🦌 Expecto Patronum - Proteção contra dementadores</li>
+      <li>💥 Stupefy – Atordoa o inimigo</li>
+      <li>🩸 Sectumsempra – Cortes profundos</li>
+      <li>🐢 Impedimenta – Diminui o alvo</li>
+      <p>ㅤ</p>
+      <h3>💡 Luz e Utilidade:</h3>
+      <li>💡 Lumos – Luz na varinha</li>
+      <li>🌑 Nox – Apaga a luz</li>
+      <li>🧲 Accio – Puxa objetos</li>
+      <li>🚪 Alohomora – Abre portas</li>
+      <li>🔧 Reparo – Conserta objetos</li>
+      <p>ㅤ</p>
+      <h3>🧠 Controle e Percepção:</h3>
+      <li>💣 Expulso – Explosão</li>
+      <li>🪶 Wingardium Leviosa - Faz objetos levitarem</li>
+      <li>😂 Riddikulus – Faz rir (bicho-papão)</li>
+      <li>❌ Finite Incantatem – Cancela magia</li>
+
+
+    </ul>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRePbwFvyl81dESv1g4054fB1s9JNIFcUqmcQ&s">
+  </div>
+</div>
+
+<div id="patrono" class="conteudo">
+  <div class="card">
+    <h2>Patrono</h2>
+    <h3>1. Criaturas Mágicas</h3>
+    <ul>
+      <li>Alicórnio (Unicórnio alado);</li>
+      <li>Dragon;</li>
+      <li>Emrumpent (Criatura que lembra um rinoceronte explosivo);</li>
+      <li>Phoenix;</li>
+      <li>Hippogriff;</li>
+      <li>Occami (Serpente alada);</li>
+      <li>Runespoor (Serpente de três cabeças);</li>
+      <li>Thestral (Cavalo alado esquellético);</li>
+      <li>Unicorn</li>
+    </ul>
+    <p>ㅤ</p>
+    <h3>2. Animais Comuns e de Fazenda</h3>
+    <ul>
+      <li>Dog's: (Beagle, Bloodhound, Borzoi, Chow-chow, Galgo, Husky, Jack Russell Terrier, Mastim, São Bernardo.);</li>
+      <li>Cat's: (Gato preto, Calico, Gato de Bengala, Persa, Ragdoll, Azul Russo, Siamês.);</li>
+      <li>Horse's: (Baio, Branco, Castanho, Cinza, Negro (nas formas garanhão ou égua).);</li>
+      <li>Goat;</li>
+      <li>Cow;</li>
+      <li>Pig;</li>
+      <li>Boar;</li>
+      <li>Weasel.</li>
+    </ul>
+    <p>ㅤ</p>
+    <h3>3. Animais Selvagens e Exóticos</h3>
+    <ul>
+      <li>Big Cat's: (Leão, Leoa, Leopardo, Pantera, Tigre, Guepardo, Lince);</li>
+      <li>Bird's: (Águia, Albatroz, Coruja, Falcão, Beija-flor, Cisne, Corvo, Garça);</li>
+      <li>Mammals: (Elefante, Rinoceronte, Gorila, Urso (Preto, Marrom ou Polar), Lobo, Raposa, Esquilo, Ouriço);</li>
+      <li>Aquatics: (Golfinho, Orca, Tubarão, Salmão, Lontra, Foca).</li>
+    </ul>
+    <p>ㅤ</p>
+    <h3>4. Répteis, Anfibios e Insetos</h3>
+    <ul>
+      <li>Snakes: (Naja, Mamba Negra, Cascavel, Cobra Real);</li>
+      <li>Dragon-fly;</li>
+      <li>Lizard;</li>
+      <li>Frog;</li>
+      <li>Fire Salamander.</li>
+    </ul>
+    <img src="https://tutoriaismagicosdabruxaphilomena.wordpress.com/wp-content/uploads/2016/09/patronus_hp_by_allisonpotter-d3rde4g.jpg">
+    </div>
+</div>
+
+<div id="quiz" class="conteudo">
+  <div class="card">
+    <h2>🎩 O Chapéu Seletor</h2>
+    <p>Responda com sinceridade para descobrir sua verdadeira casa!</p>
+    
+    <form id="quizForm">
+      <h4 class="textgold">1. Qual dessas qualidades você mais valoriza?</h4>
+      <input type="radio" name="p1" value="g" required> Coragem e bravura<br>
+      <input type="radio" name="p1" value="s"> Ambição e astúcia<br>
+      <input type="radio" name="p1" value="l"> Lealdade e paciência<br>
+      <input type="radio" name="p1" value="c"> Inteligência e sabedoria<br>
+      <h4 class="textgold">2. Diante de um desafio difícil, você:</h4>
+      <input type="radio" name="p2" value="g"> Encara de frente sem medo<br>
+      <input type="radio" name="p2" value="s"> Planeja a melhor forma de sair por cima<br>
+      <input type="radio" name="p2" value="l"> Pede ajuda aos amigos e trabalha em grupo<br>
+      <input type="radio" name="p2" value="c"> Analisa logicamente para encontrar a solução<br>
+      <h4 class="textgold">3. Você encontra um bruxo das trevas, oque você faria:</h4>
+      <input type="radio" name="p3" value="g"> Encarar de frente sem medo<br>
+      <input type="radio" name="p3" value="s"> Manipular a situação para vencer<br>
+      <input type="radio" name="p3" value="l"> Fugir e chamar outros professores<br>
+      <input type="radio" name="p3" value="c"> Bolar um plano para capturar o bruxo das trevas<br>
+      <h4 class="textgold">4. Seu amigo esta em perigo, oque você faz?</h4>
+      <input type="radio" name="p4" value="g"> Me serviria de escudo<br>
+      <input type="radio" name="p4" value="s"> Não ajudaria se eu tambem fosse acabar nocauteado<br>
+      <input type="radio" name="p4" value="l"> Ajudar-lo sem pensar<br>
+      <input type="radio" name="p4" value="c"> Procuraria uma chance para salva-lo<br>
+
+      <br>
+      <button type="button" onclick="calcularResultado()" style="background: gold; color: black; padding: 10px; border: none; border-radius: 5px; cursor: pointer;">Descobrir minha Casa</button>
+    </form>
+
+    <div id="resultadoQuiz" style="margin-top: 20px; font-weight: bold; font-size: 20px;"></div>
+  </div>
+</div>
+
+<div id="sobre" class="conteudo">
+  <div class="card">
+    <h2>Sobre Nós</h2>
+    <p>Olá, seja bem-vindo(a) ao nosso site puro em HTML!!</p>
+    <p>Este site foi criado como projeto para apresentação do curso técnico de Desenvolvimeto de Sistemas, com o objetivo de demonstrar e praticar oque foi ensinado durante as aulas do cusro.</p>
+    <p>Somos um grupo de amigos que juntos tivemos a decição de escolher como palta "Harry Potter" como base do site, juntos escolhendo oque seria composto dentro do site e adicinonado para informação geral dos leitores. Neste site pode ser encontrado des do resumo da história sobre harry potter, magias utilizadas por harry e sites com os principais livros, filmes e etc voltados a Harry Potter.</p>
+  </div>
+  <div class="card">
+    <h2>Participates</h2>
+    <p>Christopher Russi - Developer</p>
+    <p>Matheus Benedito - Co-Developer</p>
+    <p>Yara Fuentes - Creative Director</p>
+    <p>Pedro Henrique - Creative Director-Assistant</p>
+    <p>Karolliy Oliveira - Theme Designer</p>
+  </div>
+</div>
+
+<div id="meme" class="conteudo">
+    <div class="card6">
+        <h2 class="textwhite">Não Rony, é Wingardium LeviosaAAAAHN</h2>
+        <video width="640" height="360" controls>
+            <source src="meme_leviosa.mp4" type="video/mp4">
+            Seu navegador não suporta a tag de vídeo.
+          </video>
+    </div>
+</div>
+
+<div id="test-page" class="conteudo">
+  <div class="card">
+    <h2>Test-Page</h2>
+  </div>
+</div>
+
+<script>
+  //abas
+  function mostrarAba(id) {
+    const abas = document.querySelectorAll('.conteudo');
+    abas.forEach(aba => aba.classList.remove('ativo'));
+
+    document.getElementById(id).classList.add('ativo');
+  }
+
+  //form
+  function mostrarAba(idAba) {
+    const conteudos = document.querySelectorAll('.conteudo');
+    conteudos.forEach(aba => aba.classList.remove('ativo'));
+    document.getElementById(idAba).classList.add('ativo');
+  }
+  function calcularResultado() {
+    const form = document.getElementById('quizForm');
+    const dados = new FormData(form);
+    let pontos = { g: 0, s: 0, l: 0, c: 0 };
+    for (let valor of dados.values()) {
+      pontos[valor]++;
+    }
+    let vencedor = Object.keys(pontos).reduce((a, b) => pontos[a] > pontos[b] ? a : b);
+    const nomesCasas = {
+      g: "Grifinória! 🦁",
+      s: "Sonserina! 🐍",
+      l: "Lufa-Lufa! 🦡",
+      c: "Corvinal! 🦅"
+    };
+
+    document.getElementById('resultadoQuiz').innerHTML = "O Chapéu Seletor diz: " + nomesCasas[vencedor];
+  }
+</script>
+
+<footer style="text-align: center; padding: 20px; background-color: #1a1a1a; color: #7c7c7c; font-family: serif; font-style: italic;">
+    <p style="margin: 0; font-size: 14px;">
+        DS-Vanguards &copy; 2026. Todos os direitos reservados.
+    </p>
+</footer>
+
+</body>
+</html>
